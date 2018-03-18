@@ -16,3 +16,9 @@ D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-s
 D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\obj\Debug\topological-sort.csproj.CoreCompileInputs.cache
 D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\obj\Debug\topological-sort.exe
 D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\obj\Debug\topological-sort.pdb
+D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.dll
+D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.Drawing.dll
+D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
+D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.xml
+D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.Drawing.xml
+D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.GraphViewerGdi.xml
