@@ -40,6 +40,10 @@ namespace topological_sort
                     adjMatrix[i, j] = 0;
             graphSize = 0;
         }
+        public int GetGraphSize()
+        {
+            return this.graphSize;
+        }
         /*private void printPath(int[] path, int start, int end)
         {
             //prints a path, given a start and end, and an array that holds previous 
