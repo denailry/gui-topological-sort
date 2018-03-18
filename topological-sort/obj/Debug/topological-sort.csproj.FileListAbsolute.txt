@@ -22,3 +22,19 @@ D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-s
 D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.xml
 D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.Drawing.xml
 D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.GraphViewerGdi.xml
+D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\bin\Debug\topological-sort.exe.config
+D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\bin\Debug\topological-sort.exe
+D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\bin\Debug\topological-sort.pdb
+D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.dll
+D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.Drawing.dll
+D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
+D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.xml
+D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.Drawing.xml
+D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.GraphViewerGdi.xml
+D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\obj\Debug\topological-sort.csprojResolveAssemblyReference.cache
+D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\obj\Debug\topological_sort.Properties.Resources.resources
+D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\obj\Debug\topological-sort.csproj.GenerateResource.cache
+D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\obj\Debug\topological-sort.csproj.CoreCompileInputs.cache
+D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\obj\Debug\topological-sort.csproj.CopyComplete
+D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\obj\Debug\topological-sort.exe
+D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\obj\Debug\topological-sort.pdb

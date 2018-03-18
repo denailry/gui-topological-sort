@@ -12,6 +12,10 @@ namespace topological_sort
         {
             private int index;
             public string data;
+            public int GetIndex()
+            {
+                return index;
+            }
             public Vertex(string data, int index)
             {
                 this.index = index;
@@ -58,6 +62,12 @@ namespace topological_sort
                 Console.Write("{0} ", s.Pop());//print successive nodes to destination
             }
         }*/
+        public int GetGraphSize() {
+            return graphSize;
+        }
+        public List<Vertex> GetVertices() {
+            return vertices;
+        }
         public Vertex GetVertex(int idx) {
             return vertices[idx];
         }
