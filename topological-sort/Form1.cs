@@ -164,6 +164,8 @@ namespace topological_sort
             c.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Diamond;
             */
 
+            Microsoft.Msagl.Drawing.Graph graph1 = new Microsoft.Msagl.Drawing.Graph("graph1");
+            //create the graph content 
             using (StreamReader sr = new StreamReader("DFS.dat"))
             {
                 string line;
@@ -176,20 +178,26 @@ namespace topological_sort
                     step = line.Split(' ').ToList<string>();
                     if (step[0] == "(")
                     {
-                        graph.re
-                        graph.AddEdge(step[1], step[2]).Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
+                        graph1.AddEdge(step[1], step[2]).Attr.Color = Microsoft.Msagl.Drawing.Color.Black;
                     }
                     else if (step[0] == ">")
 
                     {
-                        graph.FindNode(step[1]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.MistyRose;
+                        graph1.FindNode(step[1]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Green;
                     }
                     else
                     {
-                        graph.FindNode(step[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Magenta;
+                        if (graph1.FindNode(step[0]) == null)
+                        {
+                            graph1.AddNode(step[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Coral;
+                        }
+                        else
+                        {
+                            graph1.FindNode(step[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Coral;
+                        }
                     }
                     //bind the graph to the viewer 
-                    viewer.Graph = graph;
+                    viewer.Graph = graph1;
                     //associate the viewer with the form 
                     form.SuspendLayout();
                     viewer.Dock = System.Windows.Forms.DockStyle.Fill;
