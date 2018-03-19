@@ -57,5 +57,10 @@ namespace topological_sort
                 textBox2.Text = "The file could not be read:";
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
