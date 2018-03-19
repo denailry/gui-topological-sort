@@ -54,7 +54,7 @@ namespace topological_sort
         }
         public int[,] getAdjMatrix()
         {
-            return this->adjMatrix;
+            return this.adjMatrix;
         }
         public int GetRootIndex()
         {

@@ -83,7 +83,7 @@ namespace topological_sort
                     i++;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 textBox1.Text = "The file could not be read!";
             }
@@ -132,20 +132,20 @@ namespace topological_sort
             //create the graph content 
 
             int i = 0;
-            foreach (Vertex value1 in g1.GetVertices())
+            foreach (Graph.Vertex value1 in g1.GetVertices())
             {
                 int j = 0;
-                foreach (Vertex value1 in g1.GetVertices())
+                foreach (Graph.Vertex value2 in g1.GetVertices())
                 {
                     if (g1.getAdjMatrix()[value1.GetIndex(),value2.GetIndex()] == 1)
                     {
-                        graph.AddEdge(g1.GetVertex(j).data, g1.GetVertex(i).data);
+                        graph.AddEdge(g1.GetVertex(i).data, g1.GetVertex(j).data);
                     }
                     j++;
                 }
                 i++;
             }
-            
+
             /*
             graph.AddEdge("A", "C").Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
             graph.FindNode("A").Attr.FillColor = Microsoft.Msagl.Drawing.Color.Magenta;
@@ -154,15 +154,40 @@ namespace topological_sort
             c.Attr.FillColor = Microsoft.Msagl.Drawing.Color.PaleGreen;
             c.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Diamond;
             */
-            
+
+            using (StreamReader sr = new StreamReader("DFS.dat"))
+            {
+                string line;
+                List<string> step;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    //line.Trim(' ');
+                    //line.Trim('.');
+                    //listBox1.Items.Add(line);
+                    step = line.Split(' ').ToList<string>();
+                    foreach (string value in g1vertex)
+                    {
+                        if (g1.GetVertexIndex(value) == -1)
+                        {
+                            g1.AddVertex(value);
+                        }
+                    }
+                    foreach (string value in g1vertex)
+                    {
+                        Console.WriteLine(value);
+                        if (value != g1vertex[0])
+                        {
+                            g1.AddEdge(value, g1vertex[0]);
+                        }
+                    }
+                }
+            }
+
             //bind the graph to the viewer 
             viewer.Graph = graph;
             //associate the viewer with the form 
             form.SuspendLayout();
             viewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            form.Controls.Add(viewer);
-            form.ResumeLayout();
-            //graph.AddEdge("A", "C").Attr.Color = Microsoft.Msagl.Drawing.Color.Magenta;
             form.Controls.Add(viewer);
             form.ResumeLayout();
             //show the form 
