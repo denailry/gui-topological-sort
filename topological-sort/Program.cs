@@ -17,26 +17,6 @@ namespace topological_sort
             Form1 form1 = new Form1();
             Application.EnableVisualStyles();
             Application.Run(form1);
-
-            Graph graph = new Graph(5);
-            graph.AddVertex("C1");
-            graph.AddVertex("C2");
-            graph.AddVertex("C3");
-            graph.AddVertex("C4");
-            graph.AddVertex("C5");
-
-            graph.AddEdge("C1", "C2");
-            graph.AddEdge("C2", "C3");
-            graph.AddEdge("C2", "C4");
-            graph.AddEdge("C1", "C4");
-            graph.AddEdge("C3", "C5");
-            graph.AddEdge("C4", "C5");
-            graph.AddEdge("C4", "C3");
-
-            TopologicalSort ts = new TopologicalSort(graph);
-            ts.BFS();
-            ts.DFS();
-
             /*
             //create a form 
             System.Windows.Forms.Form form = new System.Windows.Forms.Form();
