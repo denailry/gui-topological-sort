@@ -55,3 +55,4 @@ D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\obj\Debug\topo
 D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\obj\Debug\topological-sort.exe
 D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\obj\Debug\topological-sort.pdb
 D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\obj\Debug\topological_sort.Form1.resources
+D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\obj\Debug\topological_sort.Form1.resources

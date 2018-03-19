@@ -15,7 +15,11 @@ namespace topological_sort
         static void Main()
         {
             Form1 form1 = new Form1();
+
             Application.EnableVisualStyles();
+
+            Application.EnableVisualStyles();
+
             Application.Run(form1);
             Graph graph = new Graph(5);
             graph.AddVertex("C1");
@@ -34,7 +38,8 @@ namespace topological_sort
 
             TopologicalSort ts = new TopologicalSort(graph);
             ts.BFS();
-            
+            ts.DFS();
+
             /*
             //create a form 
             System.Windows.Forms.Form form = new System.Windows.Forms.Form();
