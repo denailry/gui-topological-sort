@@ -72,7 +72,7 @@ namespace topological_sort
                 }
                 g1.Display();
                 TopologicalSort ts = new TopologicalSort(g1);
-                ts.DFS();
+                ts.BFS();
                 int i = 1;
                 foreach(string value in ts.GetResult())
                 {
