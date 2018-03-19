@@ -52,6 +52,10 @@ namespace topological_sort
             graphSize = 0;
             rootFound = false;
         }
+        public int[,] getAdjMatrix()
+        {
+            return this->adjMatrix;
+        }
         public int GetRootIndex()
         {
             if (rootFound)

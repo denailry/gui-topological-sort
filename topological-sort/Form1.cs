@@ -18,6 +18,8 @@ namespace topological_sort
             InitializeComponent();
         }
 
+        Graph g1 = new Graph(25);
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -44,14 +46,15 @@ namespace topological_sort
             try
             {
                 listBox1.Items.Clear();
-                Graph g1 = new Graph(25);
                 using (StreamReader sr = new StreamReader(openFileDialog1.FileName))
                 {
                     string line;
                     List<string> g1vertex;
                     while ((line = sr.ReadLine()) != null)
                     {
-                        listBox1.Items.Add(line);
+                        //line.Trim(' ');
+                        //line.Trim('.');
+                        //listBox1.Items.Add(line);
                         g1vertex = line.Split(',').ToList<string>();
                         foreach (string value in g1vertex)
                         {
@@ -72,7 +75,7 @@ namespace topological_sort
                 }
                 g1.Display();
                 TopologicalSort ts = new TopologicalSort(g1);
-                ts.DFS();
+                ts.BFS();
                 int i = 1;
                 foreach(string value in ts.GetResult())
                 {
@@ -103,7 +106,7 @@ namespace topological_sort
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -116,7 +119,10 @@ namespace topological_sort
 
         }
 
-        /*
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TopologicalSort ts = new TopologicalSort(g1);
+            ts.DFS();
             //create a form 
             System.Windows.Forms.Form form = new System.Windows.Forms.Form();
             //create a viewer object 
@@ -124,14 +130,31 @@ namespace topological_sort
             //create a graph object 
             Microsoft.Msagl.Drawing.Graph graph = new Microsoft.Msagl.Drawing.Graph("graph");
             //create the graph content 
-            graph.AddEdge("A", "B");
-            graph.AddEdge("B", "C");
+
+            int i = 0;
+            foreach (Vertex value1 in g1.GetVertices())
+            {
+                int j = 0;
+                foreach (Vertex value1 in g1.GetVertices())
+                {
+                    if (g1.getAdjMatrix()[value1.GetIndex(),value2.GetIndex()] == 1)
+                    {
+                        graph.AddEdge(g1.GetVertex(j).data, g1.GetVertex(i).data);
+                    }
+                    j++;
+                }
+                i++;
+            }
+            
+            /*
             graph.AddEdge("A", "C").Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
             graph.FindNode("A").Attr.FillColor = Microsoft.Msagl.Drawing.Color.Magenta;
             graph.FindNode("B").Attr.FillColor = Microsoft.Msagl.Drawing.Color.MistyRose;
             Microsoft.Msagl.Drawing.Node c = graph.FindNode("C");
             c.Attr.FillColor = Microsoft.Msagl.Drawing.Color.PaleGreen;
             c.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Diamond;
+            */
+            
             //bind the graph to the viewer 
             viewer.Graph = graph;
             //associate the viewer with the form 
@@ -139,13 +162,11 @@ namespace topological_sort
             viewer.Dock = System.Windows.Forms.DockStyle.Fill;
             form.Controls.Add(viewer);
             form.ResumeLayout();
-            //show the form 
-            form.ShowDialog();
-            graph.AddEdge("A", "C").Attr.Color = Microsoft.Msagl.Drawing.Color.Magenta;
+            //graph.AddEdge("A", "C").Attr.Color = Microsoft.Msagl.Drawing.Color.Magenta;
             form.Controls.Add(viewer);
             form.ResumeLayout();
             //show the form 
             form.ShowDialog();
-            */
+        }
     }
 }
