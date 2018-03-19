@@ -17,6 +17,7 @@ namespace topological_sort
             Form1 form1 = new Form1();
             Application.EnableVisualStyles();
             Application.Run(form1);
+
         }
     }
 }

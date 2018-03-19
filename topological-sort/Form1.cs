@@ -13,6 +13,8 @@ namespace topological_sort
 {
     public partial class Form1 : Form
     {
+        private Graph g1 = new Graph(25);
+
         public Form1()
         {
             InitializeComponent();
@@ -44,7 +46,6 @@ namespace topological_sort
             try
             {
                 listBox1.Items.Clear();
-                Graph g1 = new Graph(25);
                 using (StreamReader sr = new StreamReader(openFileDialog1.FileName))
                 {
                     string line;
@@ -72,7 +73,7 @@ namespace topological_sort
                 }
                 g1.Display();
                 TopologicalSort ts = new TopologicalSort(g1);
-                ts.DFS();
+                ts.BFS();
                 int i = 1;
                 foreach(string value in ts.GetResult())
                 {
@@ -103,7 +104,69 @@ namespace topological_sort
 
         private void button3_Click(object sender, EventArgs e)
         {
+            string[] lines = System.IO.File.ReadAllLines("BFS.dat");
+           
+            Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+            Microsoft.Msagl.Drawing.Graph graph = new Microsoft.Msagl.Drawing.Graph("graph");
 
+            //create the graph content 
+            for (int i = 0; i < g1.GetGraphSize(); ++i)
+            {
+                string vertex = g1.GetVertex(i).data;
+                List<string> neighbours = g1.GetNeighbor(vertex);
+
+                foreach (var neighbour in neighbours)
+                {
+                    graph.AddEdge(vertex, neighbour);
+                }
+            }
+            //bind the graph to the viewer 
+            viewer.Graph = graph;
+            viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+
+            System.Windows.Forms.Form form = new System.Windows.Forms.Form();
+            form.SuspendLayout();
+            form.Controls.Add(viewer);
+            form.ResumeLayout();
+            form.ShowDialog();
+
+            int turn = 0;
+            int counter = 0;
+            string prevVertex = "";
+            foreach (var line in lines)
+            {
+                if ((turn % 2) == 0) {
+                    prevVertex = line;
+                    graph.FindNode(line).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Green;
+                    counter++;
+                } else
+                {
+                    List<string> neighbours;
+                    try
+                    {
+                        neighbours = g1.GetNeighbor(prevVertex);
+                    } catch
+                    {
+                        Console.WriteLine(prevVertex);
+                        break;
+                    }
+                    
+                    foreach (var neighbour in neighbours)
+                    {
+                        graph.FindNode(neighbour).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
+                    }
+                }
+                if (counter == g1.GetGraphSize())
+                {
+                    break;
+                } else
+                {
+                    form.Controls.Add(viewer);
+                    form.ResumeLayout();
+                    form.ShowDialog();
+                    turn++;
+                }
+            }
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
