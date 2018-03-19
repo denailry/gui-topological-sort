@@ -61,7 +61,6 @@ namespace topological_sort
             string resSeq = "";
             for (int i = 0; i < graph.GetGraphSize(); ++i)
             {
-                Console.WriteLine(visitCounter[i]);
                 resSeq = resSeq + visitCounter[i] + ",";
             }
             System.IO.File.AppendAllText("BFS.dat", resSeq + Environment.NewLine);

@@ -36,11 +36,6 @@ namespace topological_sort
             TopologicalSort ts = new TopologicalSort(graph);
             ts.BFS();
             //ts.DFS();
-            List<string> res = ts.GetResult();
-            foreach (var c in res)
-            {
-                Console.WriteLine(c);
-            }
       
             /*
             //create a form 
