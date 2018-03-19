@@ -5,6 +5,7 @@ C2
 C5
 > C5
 > C2
+<<<<<<< HEAD
 ( C4 C5
 > C4
 C1
@@ -14,4 +15,15 @@ C1
 C3
 ( C3 C4
 ( C3 C1
+=======
+( C1 C4
+C4
+( C4 C2
+( C4 C5
+> C4
+> C1
+C3
+( C3 C1
+( C3 C4
+>>>>>>> d92c0de7b3860fdaeddfa1ccd5fa4cb207161c81
 > C3

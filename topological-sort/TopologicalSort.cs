@@ -111,14 +111,12 @@ namespace topological_sort
         private void DFSUtil(Graph.Vertex V, ref int timestamp, ref List<int> stopstamp, ref List<bool> visited, ref StreamWriter sw)
         {
             int j;
-            int i = V.GetIndex();
-            
-            //start
+            int i = V.GetIndex();            
             visited[i] = true;
-            sw.WriteLine(V.data);
+            sw.WriteLine(V.data);            
+
             timestamp++;
-            foreach (string vertexname in graph.GetNeighbor(V.data))
-            {
+            foreach (string vertexname in graph.GetNeighbor(V.data)) {
                 j = graph.GetVertexIndex(vertexname);
                 sw.WriteLine("( " + V.data + " " + vertexname);
                 if (!visited[j])
@@ -126,12 +124,10 @@ namespace topological_sort
                     DFSUtil(graph.GetVertex(j), ref timestamp, ref stopstamp, ref visited, ref sw);
                 }
             }
-            //stop
             sw.WriteLine("> " + V.data);
-            timestamp++;
+            timestamp++;            
             stopstamp[i] = timestamp;
         }
-
         public void DFS()
         {
             StreamWriter sw = new StreamWriter("DFS.dat");
@@ -144,23 +140,23 @@ namespace topological_sort
             foreach (Graph.Vertex V in graph.GetVertices())
             {
                 i = V.GetIndex();
-                if (!visited[i])
-                {
+                if (!visited[i]) {
                     DFSUtil(V, ref timestamp, ref stopstamp, ref visited, ref sw);
                 }
             }
-            sw.Close();
             //Sort based on stopstamp
             var sorted = stopstamp
                 .Select((x, j) => new KeyValuePair<int, int>(x, j))
                 .OrderBy(x => x.Key)
                 .ToList();
-            //List<int> result = sorted.Select(x => x.Key).ToList();
+            //List<int> valu = sorted.Select(x => x.Key).ToList();
             List<int> resultIndex = sorted.Select(x => x.Value).ToList();
-            for (i = 0; i <= resultIndex.Last(); i++)
-            {
-                res[i] = graph.GetVertex(resultIndex[resultIndex.Last()-i]).data;
+            //sw.WriteLine(string.Join(",", resultIndex.ToArray()));
+            for (i = 0; i < resultIndex.Count(); i++) {
+                res[i] = graph.GetVertex(resultIndex[resultIndex.Count()-1-i]).data;
             }
+            //sw.WriteLine(string.Join(",", res.ToArray()));
+            sw.Close();
             result = res;
         }
 
