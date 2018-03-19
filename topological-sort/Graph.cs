@@ -24,15 +24,14 @@ namespace topological_sort
         }
         /// <summary>
         /// 4 attributes
-        /// A list of vertices (to store node information for each index such as name/text)
+        /// a list of vertices (to store node information for each index such as name/text)
         /// a 2D array - our adjacency matrix, stores edges between vertices
-        /// a graphSize integer
-        /// a StreamReader, to read in graph data to create the data structure
+        /// a graphSize, Neff size
+        /// a maxSize, maximum size of vertices
         /// </summary>
         private List<Vertex> vertices;
         private int graphSize;
         private int maxSize;
-        //private StreamReader sr;
         private int[,] adjMatrix;
         public Graph(int n)
         {
@@ -48,24 +47,6 @@ namespace topological_sort
         {
             return this.graphSize;
         }
-        /*private void printPath(int[] path, int start, int end)
-        {
-            //prints a path, given a start and end, and an array that holds previous 
-            //nodes visited
-            Console.WriteLine("Shortest path from source to destination:");
-            int temp = end;
-            Stack<int> s = new Stack<int>();
-            while (temp != start)
-            {
-                s.Push(temp);
-                temp = path[temp];
-            }
-            Console.Write("{0} ", temp);//print source
-            while (s.Count != 0)
-            {
-                Console.Write("{0} ", s.Pop());//print successive nodes to destination
-            }
-        }*/
         public List<Vertex> GetVertices() {
             return vertices;
         }
@@ -105,7 +86,6 @@ namespace topological_sort
         {
             int i = GetVertexIndex(vertexA);
             int j = GetVertexIndex(vertexB);
-            Console.Write("{0}", i);
             if (i != -1 && j != -1)
             {
                 adjMatrix[i, j] = 1;
@@ -119,13 +99,6 @@ namespace topological_sort
             {
                 adjMatrix[i, j] = 0;
             }
-        }
-        public bool isAdjacent(string vertexA, string vertexB)
-        {   //checks whether two vertices are adjacent, returns true or false
-            
-            int i = GetVertexIndex(vertexA);
-            int j = GetVertexIndex(vertexB);
-            return adjMatrix[i, j] >= 0;
         }
         public void Display() //displays the adjacency matrix
         {
@@ -147,11 +120,6 @@ namespace topological_sort
                 Console.WriteLine();
                 Console.WriteLine();
             }
-            Console.WriteLine("Read the graph from left to right");
-        }
-        private void DisplayVertex(int v) //displays data/description for a node
-        {
-            Console.WriteLine(vertices[v].data);
         }
     }
 }
