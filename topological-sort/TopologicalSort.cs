@@ -108,45 +108,44 @@ namespace topological_sort
             System.IO.File.AppendAllText("BFS.dat", resSeq + Environment.NewLine);
         }
 
-        private void DFSUtil(Graph.Vertex V, ref int timestamp, ref List<int> stopstamp, ref List<bool> visited, ref StreamWriter sw)
+        public void DFSUtil(Graph.Vertex V, ref int timestamp, ref List<int> startstamp, ref List<int> stopstamp, ref List<bool> visited, ref StreamWriter sw)
         {
-            int j;
-            int i = V.GetIndex();
-            
-            //start
-            visited[i] = true;
-            sw.WriteLine(V.data);
-            timestamp++;
-            foreach (string vertexname in graph.GetNeighbor(V.data))
-            {
-                j = graph.GetVertexIndex(vertexname);
-                sw.WriteLine("( " + V.data + " " + vertexname);
-                if (!visited[j])
+            int i;
+            foreach (string vertexname in graph.GetNeighbor(V.data)) {
+                i = graph.GetVertexIndex(vertexname);
+                timestamp++;
+                if (!visited[i])
                 {
-                    DFSUtil(graph.GetVertex(j), ref timestamp, ref stopstamp, ref visited, ref sw);
+                    startstamp[i] = timestamp;
+                    sw.WriteLine();
+                    DFSUtil(graph.GetVertex(i), ref timestamp, ref startstamp, ref stopstamp, ref visited, ref sw);
+                    stopstamp[i] = timestamp;
                 }
+                else
+                    sw.WriteLine("<");
             }
-            //stop
-            sw.WriteLine("> " + V.data);
-            timestamp++;
-            stopstamp[i] = timestamp;
         }
 
         public void DFS()
         {
-            StreamWriter sw = new StreamWriter("DFS.dat");
+            StreamWriter sw = new StreamWriter("DFS.txt");
             int timestamp = 0;
             int i;
             List<bool> visited = new List<bool>(new bool[graph.GetGraphSize()]);
-            List<int> stopstamp = new List<int>(new int[graph.GetGraphSize()]);
-            List<string> res = new List<string>(new string[graph.GetGraphSize()]);
+            List<int> startstamp = new List<int>(graph.GetGraphSize());
+            List<int> stopstamp = new List<int>(graph.GetGraphSize());
+            List<string> res = new List<string>(graph.GetGraphSize());
 
             foreach (Graph.Vertex V in graph.GetVertices())
             {
+                timestamp++;
                 i = V.GetIndex();
-                if (!visited[i])
-                {
-                    DFSUtil(V, ref timestamp, ref stopstamp, ref visited, ref sw);
+                if (!visited[i]) {
+                    startstamp[i] = timestamp;
+                    sw.WriteLine(V.data);
+                    DFSUtil(V, ref timestamp, ref startstamp, ref stopstamp, ref visited, ref sw);
+                    sw.WriteLine("<");
+                    stopstamp[i] = timestamp;
                 }
             }
             sw.Close();
@@ -157,9 +156,8 @@ namespace topological_sort
                 .ToList();
             //List<int> result = sorted.Select(x => x.Key).ToList();
             List<int> resultIndex = sorted.Select(x => x.Value).ToList();
-            for (i = 0; i <= resultIndex.Last(); i++)
-            {
-                res[i] = graph.GetVertex(resultIndex[resultIndex.Last()-i]).data;
+            for (i = resultIndex.Capacity-1; i >= 0; i--) {
+                res[i] = graph.GetVertex(i).data;
             }
             result = res;
         }

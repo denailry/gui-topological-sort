@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 D:\Documents\Kuliah\Semester 4\Strategi Algoritma\algorithm-design\gui-topological-sort\topological-sort\topological-sort\bin\Debug\topological-sort.exe.config
 D:\Documents\Kuliah\Semester 4\Strategi Algoritma\algorithm-design\gui-topological-sort\topological-sort\topological-sort\bin\Debug\topological-sort.exe
 D:\Documents\Kuliah\Semester 4\Strategi Algoritma\algorithm-design\gui-topological-sort\topological-sort\topological-sort\bin\Debug\topological-sort.pdb
@@ -56,62 +55,3 @@ D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\obj\Debug\topo
 D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\obj\Debug\topological-sort.exe
 D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\obj\Debug\topological-sort.pdb
 D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\obj\Debug\topological_sort.Form1.resources
-=======
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\algorithm-design\gui-topological-sort\topological-sort\topological-sort\bin\Debug\topological-sort.exe.config
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\algorithm-design\gui-topological-sort\topological-sort\topological-sort\bin\Debug\topological-sort.exe
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\algorithm-design\gui-topological-sort\topological-sort\topological-sort\bin\Debug\topological-sort.pdb
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\algorithm-design\gui-topological-sort\topological-sort\topological-sort\obj\Debug\topological-sort.csprojResolveAssemblyReference.cache
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\algorithm-design\gui-topological-sort\topological-sort\topological-sort\obj\Debug\topological_sort.Properties.Resources.resources
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\algorithm-design\gui-topological-sort\topological-sort\topological-sort\obj\Debug\topological-sort.csproj.GenerateResource.Cache
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\algorithm-design\gui-topological-sort\topological-sort\topological-sort\obj\Debug\topological-sort.csproj.CoreCompileInputs.cache
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\algorithm-design\gui-topological-sort\topological-sort\topological-sort\obj\Debug\topological-sort.exe
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\algorithm-design\gui-topological-sort\topological-sort\topological-sort\obj\Debug\topological-sort.pdb
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\bin\Debug\topological-sort.exe.config
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\bin\Debug\topological-sort.exe
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\bin\Debug\topological-sort.pdb
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\obj\Debug\topological-sort.csprojResolveAssemblyReference.cache
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\obj\Debug\topological_sort.Properties.Resources.resources
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\obj\Debug\topological-sort.csproj.GenerateResource.Cache
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\obj\Debug\topological-sort.csproj.CoreCompileInputs.cache
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\obj\Debug\topological-sort.exe
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\obj\Debug\topological-sort.pdb
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.dll
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.Drawing.dll
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.xml
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.Drawing.xml
-D:\Documents\Kuliah\Semester 4\Strategi Algoritma\topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.GraphViewerGdi.xml
-D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\bin\Debug\topological-sort.exe.config
-D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\bin\Debug\topological-sort.exe
-D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\bin\Debug\topological-sort.pdb
-D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.dll
-D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.Drawing.dll
-D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
-D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.xml
-D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.Drawing.xml
-D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.GraphViewerGdi.xml
-D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\obj\Debug\topological-sort.csprojResolveAssemblyReference.cache
-D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\obj\Debug\topological_sort.Properties.Resources.resources
-D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\obj\Debug\topological-sort.csproj.GenerateResource.cache
-D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\obj\Debug\topological-sort.csproj.CoreCompileInputs.cache
-D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\obj\Debug\topological-sort.csproj.CopyComplete
-D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\obj\Debug\topological-sort.exe
-D:\KULIAH\TUGAS\SEMESTER 4\STIMA\4 Rencana Kuliah\gui-topological-sort\topological-sort\obj\Debug\topological-sort.pdb
-D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\bin\Debug\topological-sort.exe.config
-D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\bin\Debug\topological-sort.exe
-D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\bin\Debug\topological-sort.pdb
-D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.dll
-D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.Drawing.dll
-D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
-D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.xml
-D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.Drawing.xml
-D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\bin\Debug\Microsoft.Msagl.GraphViewerGdi.xml
-D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\obj\Debug\topological-sort.csprojResolveAssemblyReference.cache
-D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\obj\Debug\topological_sort.Properties.Resources.resources
-D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\obj\Debug\topological-sort.csproj.GenerateResource.cache
-D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\obj\Debug\topological-sort.csproj.CoreCompileInputs.cache
-D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\obj\Debug\topological-sort.csproj.CopyComplete
-D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\obj\Debug\topological-sort.exe
-D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\obj\Debug\topological-sort.pdb
-D:\File Kerja\Tubes Stima 2\gui-topological-sort\topological-sort\obj\Debug\topological_sort.Form1.resources
->>>>>>> e6def80fa1c589497d5ecb7a3e46e135940ce13c
