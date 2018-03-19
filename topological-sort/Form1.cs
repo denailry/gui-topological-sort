@@ -145,6 +145,15 @@ namespace topological_sort
                 }
                 i++;
             }
+            //bind the graph to the viewer 
+            viewer.Graph = graph;
+            //associate the viewer with the form 
+            form.SuspendLayout();
+            viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            form.Controls.Add(viewer);
+            form.ResumeLayout();
+            //show the form 
+            form.ShowDialog();
 
             /*
             graph.AddEdge("A", "C").Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
@@ -165,33 +174,31 @@ namespace topological_sort
                     //line.Trim('.');
                     //listBox1.Items.Add(line);
                     step = line.Split(' ').ToList<string>();
-                    foreach (string value in g1vertex)
+                    if (step[0] == "(")
                     {
-                        if (g1.GetVertexIndex(value) == -1)
-                        {
-                            g1.AddVertex(value);
-                        }
+                        graph.re
+                        graph.AddEdge(step[1], step[2]).Attr.Color = Microsoft.Msagl.Drawing.Color.Green;
                     }
-                    foreach (string value in g1vertex)
+                    else if (step[0] == ">")
+
                     {
-                        Console.WriteLine(value);
-                        if (value != g1vertex[0])
-                        {
-                            g1.AddEdge(value, g1vertex[0]);
-                        }
+                        graph.FindNode(step[1]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.MistyRose;
                     }
+                    else
+                    {
+                        graph.FindNode(step[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Magenta;
+                    }
+                    //bind the graph to the viewer 
+                    viewer.Graph = graph;
+                    //associate the viewer with the form 
+                    form.SuspendLayout();
+                    viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+                    form.Controls.Add(viewer);
+                    form.ResumeLayout();
+                    //show the form 
+                    form.ShowDialog();
                 }
             }
-
-            //bind the graph to the viewer 
-            viewer.Graph = graph;
-            //associate the viewer with the form 
-            form.SuspendLayout();
-            viewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            form.Controls.Add(viewer);
-            form.ResumeLayout();
-            //show the form 
-            form.ShowDialog();
         }
     }
 }
