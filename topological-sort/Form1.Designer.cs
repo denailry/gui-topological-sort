@@ -1,4 +1,4 @@
-﻿namespace topological_sort
+namespace topological_sort
 {
     partial class Form1
     {
@@ -161,7 +161,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -177,4 +176,3 @@
         private System.Windows.Forms.TextBox textBox5;
     }
 }
-

@@ -26,7 +26,7 @@ namespace topological_sort
             }
             List<string> result = new List<string>();
 
-            Graph.Vertex root = graph.GetVertex(0);
+            Graph.Vertex root = graph.GetVertex(graph.GetRootIndex());
             Queue<string> queue = new Queue<string>();
             List<string> neighbors = graph.GetNeighbor(root.data);
 

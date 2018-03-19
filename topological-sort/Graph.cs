@@ -33,15 +33,46 @@ namespace topological_sort
         private int graphSize;
         private int maxSize;
         private int[,] adjMatrix;
+        private bool rootFound;
+        private int rootIndex;
+        private int[] directedCount;
+
         public Graph(int n)
         {
+            directedCount = new int[n];
             vertices = new List<Vertex>();
             maxSize = n;//non-zero arrays, add 1
             adjMatrix = new int[maxSize, maxSize];
             for (int i=0; i<maxSize; i++)
-                for (int j=0; j<maxSize; j++)
+            {
+                directedCount[0] = 0;
+                for (int j = 0; j < maxSize; j++)
                     adjMatrix[i, j] = 0;
+            }
             graphSize = 0;
+            rootFound = false;
+        }
+        public int GetRootIndex()
+        {
+            if (rootFound)
+            {
+                return this.rootIndex;
+            } else
+            {
+                int min = maxSize;
+                int pos = -1;
+                for (int i = 0; i < graphSize; ++i)
+                {
+                    if (directedCount[i] < min)
+                    {
+                        min = directedCount[i];
+                        pos = i;
+                    }
+                }
+                this.rootIndex = pos;
+                rootFound = true;
+                return rootIndex;
+            }
         }
         public int GetGraphSize()
         {
@@ -81,6 +112,7 @@ namespace topological_sort
             Vertex newNode = new Vertex(data, graphSize);
             graphSize++;
             vertices.Add(newNode);
+            this.rootFound = false;
         }
         public void AddEdge(string vertexA, string vertexB)
         {
@@ -90,6 +122,8 @@ namespace topological_sort
             {
                 adjMatrix[i, j] = 1;
             }
+            rootFound = false;
+            directedCount[j]++;
         }
         public void RemoveEdge(string vertexA, string vertexB)
         {
