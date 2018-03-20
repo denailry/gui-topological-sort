@@ -255,7 +255,6 @@ namespace topological_sort
                     if (step[0] == "(")
                     {
                         Microsoft.Msagl.Drawing.Node c = graph.FindNode(step[1]);
-                        Microsoft.Msagl.Drawing.Edge temp;
                         IEnumerable<Microsoft.Msagl.Drawing.Edge> edges = c.OutEdges;
                         foreach (Microsoft.Msagl.Drawing.Edge edge in edges)
                         {
@@ -268,13 +267,19 @@ namespace topological_sort
                     else if (step[0] == ">")
 
                     {
-                        graph.FindNode(step[1]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Green;
+                        graph.FindNode(step[1]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.PaleVioletRed;
+                        graph.FindNode(step[1]).LabelText += "/" + step[2].ToString() + ")";
+                    }
+                    else if (step[0] == "==")
+                    {
+                        graph.FindNode(step[1]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Aqua;
                     }
                     else
                     {
                         if (graph.FindNode(step[0]) != null)
                         {
-                            graph.FindNode(step[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Coral;
+                            graph.FindNode(step[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.PaleGreen;
+                            graph.FindNode(step[0]).LabelText += " (" + step[1].ToString();
                         }
                     }
                     //bind the graph to the viewer 
