@@ -170,6 +170,10 @@ namespace topological_sort
             {
                 string line;
                 List<string> step;
+                foreach(Graph.Vertex value1 in g1.GetVertices())
+                {
+                    graph1.AddNode(value1.data).Attr.FillColor = Microsoft.Msagl.Drawing.Color.White;
+                }
                 while ((line = sr.ReadLine()) != null)
                 {
                     //line.Trim(' ');
@@ -187,11 +191,11 @@ namespace topological_sort
                     }
                     else
                     {
-                        if (graph1.FindNode(step[0]) == null)
-                        {
-                            graph1.AddNode(step[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Coral;
-                        }
-                        else
+                        if (graph1.FindNode(step[0]) != null)
+                        //{
+                        //   graph1.AddNode(step[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Coral;
+                        //}
+                        //else
                         {
                             graph1.FindNode(step[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Coral;
                         }
