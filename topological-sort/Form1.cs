@@ -164,44 +164,42 @@ namespace topological_sort
             c.Attr.Shape = Microsoft.Msagl.Drawing.Shape.Diamond;
             */
 
-            Microsoft.Msagl.Drawing.Graph graph1 = new Microsoft.Msagl.Drawing.Graph("graph1");
+            //Microsoft.Msagl.Drawing.Graph graph1 = new Microsoft.Msagl.Drawing.Graph("graph1");
             //create the graph content 
             using (StreamReader sr = new StreamReader("DFS.dat"))
             {
                 string line;
                 List<string> step;
-                foreach(Graph.Vertex value1 in g1.GetVertices())
-                {
-                    graph1.AddNode(value1.data).Attr.FillColor = Microsoft.Msagl.Drawing.Color.White;
-                }
                 while ((line = sr.ReadLine()) != null)
                 {
-                    //line.Trim(' ');
-                    //line.Trim('.');
-                    //listBox1.Items.Add(line);
                     step = line.Split(' ').ToList<string>();
                     if (step[0] == "(")
                     {
-                        graph1.AddEdge(step[1], step[2]).Attr.Color = Microsoft.Msagl.Drawing.Color.Black;
+                        Microsoft.Msagl.Drawing.Node c = graph.FindNode(step[1]);
+                        Microsoft.Msagl.Drawing.Edge temp;
+                        IEnumerable<Microsoft.Msagl.Drawing.Edge> edges = c.OutEdges;
+                        foreach (Microsoft.Msagl.Drawing.Edge edge in edges)
+                        {
+                            if (edge.TargetNode == graph.FindNode(step[2]))
+                            {
+                                edge.Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                            }
+                        }
                     }
                     else if (step[0] == ">")
 
                     {
-                        graph1.FindNode(step[1]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Green;
+                        graph.FindNode(step[1]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Green;
                     }
                     else
                     {
-                        if (graph1.FindNode(step[0]) != null)
-                        //{
-                        //   graph1.AddNode(step[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Coral;
-                        //}
-                        //else
+                        if (graph.FindNode(step[0]) != null)
                         {
-                            graph1.FindNode(step[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Coral;
+                            graph.FindNode(step[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Coral;
                         }
                     }
                     //bind the graph to the viewer 
-                    viewer.Graph = graph1;
+                    viewer.Graph = graph;
                     //associate the viewer with the form 
                     form.SuspendLayout();
                     viewer.Dock = System.Windows.Forms.DockStyle.Fill;
