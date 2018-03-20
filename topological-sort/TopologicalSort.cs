@@ -20,9 +20,12 @@ namespace topological_sort
         public void BFS()
         {
             int [] visitCounter = new int[graph.GetGraphSize()];
+            bool[] visited = new bool[graph.GetGraphSize()];
+
             for (int i = 0; i < graph.GetGraphSize(); i++)
             {
                 visitCounter[i] = 0;
+                visited[i] = false;
             }
             List<string> result = new List<string>();
 
@@ -32,50 +35,37 @@ namespace topological_sort
 
             System.IO.File.WriteAllText("BFS.dat", root.data + Environment.NewLine);
             string strNeighbors = "";
-            string neighboursCounter = "";
             foreach (var vertex in neighbors)
             {
                 queue.Enqueue(vertex);
                 strNeighbors = strNeighbors + vertex + ",";
-                neighboursCounter = neighboursCounter + visitCounter[graph.GetVertexIndex(vertex)] + ",";
+                visitCounter[graph.GetVertexIndex(vertex)]++;
             }
             System.IO.File.AppendAllText("BFS.dat", strNeighbors + Environment.NewLine);
 
             while (queue.Count != 0)
             {
                 string visit = queue.Dequeue();
-                int index = graph.GetVertexIndex(visit);
-
-                string sVisitCounter = visitCounter[index].ToString();
-
-                visitCounter[index]++;
-
-                sVisitCounter = sVisitCounter + "," + visitCounter[index].ToString();
-
-                neighbors = graph.GetNeighbor(visit);
-                System.IO.File.AppendAllText("BFS.dat", visit + Environment.NewLine);
-                strNeighbors = "";
-                neighboursCounter = "";
-                foreach (var vertex in neighbors)
+                if (!visited[graph.GetVertexIndex(visit)])
                 {
-                    queue.Enqueue(vertex);
-                    strNeighbors = strNeighbors + vertex + ",";
-                    neighboursCounter = neighboursCounter + visitCounter[graph.GetVertexIndex(vertex)] + ",";
+                    neighbors = graph.GetNeighbor(visit);
+                    System.IO.File.AppendAllText("BFS.dat", visit + Environment.NewLine);
+                    strNeighbors = "";
+                    foreach (var vertex in neighbors)
+                    {
+                        queue.Enqueue(vertex);
+                        strNeighbors = strNeighbors + vertex + ",";
+                        visitCounter[graph.GetVertexIndex(vertex)]++;
+                    }
+                    if (strNeighbors.Length != 0)
+                    {
+                        System.IO.File.AppendAllText("BFS.dat", strNeighbors + Environment.NewLine);
+                    }
+                    visited[graph.GetVertexIndex(visit)] = true;
                 }
-                if (strNeighbors.Length != 0)
-                {
-                    System.IO.File.AppendAllText("BFS.dat", strNeighbors + Environment.NewLine);
-                }
-                
             }
 
             string resSeq = "";
-            for (int i = 0; i < graph.GetGraphSize(); ++i)
-            {
-                resSeq = resSeq + visitCounter[i] + ",";
-            }
-            System.IO.File.AppendAllText("BFS.dat", resSeq + Environment.NewLine);
-
             bool finish;
             do
             {
