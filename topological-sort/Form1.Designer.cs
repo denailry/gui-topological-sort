@@ -114,6 +114,7 @@ namespace topological_sort
             this.button2.TabIndex = 7;
             this.button2.Text = "DFS";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -161,6 +162,7 @@ namespace topological_sort
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
