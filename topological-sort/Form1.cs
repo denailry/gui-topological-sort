@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace topological_sort
 {
     public partial class Form1 : Form
@@ -80,8 +81,7 @@ namespace topological_sort
                     listBox1.Items.Add("Semester "+i+": "+value);
                     i++;
                 }
-            }
-            catch (Exception ex)
+            } catch
             {
                 textBox1.Text = "The file could not be read!";
             }
@@ -119,6 +119,8 @@ namespace topological_sort
                 {
                     graph.AddEdge(vertex, neighbour);
                 }
+                graph.FindNode(vertex).LabelText = vertex + " 0";
+                graph.FindNode(vertex).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Diamond;
             }
             //bind the graph to the viewer 
             viewer.Graph = graph;
@@ -133,32 +135,40 @@ namespace topological_sort
             int turn = 0;
             int counter = 0;
             string prevVertex = "";
-            foreach (var line in lines)
+            bool finish = false;
+
+            const int vertexIndexLength = 2;
+            int vertexIndex = 0 - vertexIndexLength;
+
+            int[] vc = new int[g1.GetGraphSize()];
+            for (int i = 0; i < g1.GetGraphSize(); ++i)
+            {
+                vc[i] = 0;
+            }
+
+            while (!finish)
             {
                 if ((turn % 2) == 0) {
-                    prevVertex = line;
-                    graph.FindNode(line).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Green;
+                    vertexIndex += vertexIndexLength;
+                    prevVertex = lines[vertexIndex];
+                    graph.FindNode(lines[vertexIndex]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Green;
+                    graph.FindNode(lines[vertexIndex]).LabelText = lines[vertexIndex] + " " + vc[g1.GetVertexIndex(prevVertex)].ToString();
                     counter++;
                 } else
                 {
-                    List<string> neighbours;
-                    try
+                    List<string> neighbours = lines[vertexIndex + 1].Split(',').ToList<string>();
+
+                    for (int i = 0; i < neighbours.Count-1; ++i)
                     {
-                        neighbours = g1.GetNeighbor(prevVertex);
-                    } catch
-                    {
-                        Console.WriteLine(prevVertex);
-                        break;
-                    }
-                    
-                    foreach (var neighbour in neighbours)
-                    {
-                        graph.FindNode(neighbour).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
+                        int c = vc[g1.GetVertexIndex(neighbours[i])];
+                        graph.FindNode(neighbours[i]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Red;
+                        graph.FindNode(neighbours[i]).LabelText = neighbours[i] + " " + (c + 1).ToString();
+                        vc[g1.GetVertexIndex(neighbours[i])]++;
                     }
                 }
                 if (counter == g1.GetGraphSize())
                 {
-                    break;
+                    finish = true;
                 } else
                 {
                     form.Controls.Add(viewer);
@@ -167,6 +177,8 @@ namespace topological_sort
                     turn++;
                 }
             }
+            vertexIndex += vertexIndexLength;
+            Console.WriteLine(lines[vertexIndex]);
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
