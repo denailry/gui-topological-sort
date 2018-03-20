@@ -251,7 +251,7 @@ namespace topological_sort
                 List<string> step;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    step = line.Split(' ').ToList<string>();
+                    step = line.Split(',').ToList<string>();
                     if (step[0] == "(")
                     {
                         Microsoft.Msagl.Drawing.Node c = graph.FindNode(step[1]);

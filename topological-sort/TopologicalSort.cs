@@ -119,13 +119,13 @@ namespace topological_sort
             timestamp++;
             foreach (string vertexname in graph.GetNeighbor(V.data)) {
                 j = graph.GetVertexIndex(vertexname);
-                sw.WriteLine("( " + V.data + " " + vertexname);
+                sw.WriteLine("(," + V.data + "," + vertexname);
                 if (!visited[j])
                 {
                     DFSUtil(graph.GetVertex(j), ref timestamp, ref stopstamp, ref visited, ref sw);
                 }
             }
-            sw.WriteLine("> " + V.data);
+            sw.WriteLine(">," + V.data);
             timestamp++;            
             stopstamp[i] = timestamp;
         }
