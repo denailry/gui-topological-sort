@@ -224,6 +224,11 @@ namespace topological_sort
             //create a graph object 
             Microsoft.Msagl.Drawing.Graph graph = new Microsoft.Msagl.Drawing.Graph("graph");
             //create the graph content 
+            
+            foreach (Graph.Vertex value in g1.GetVertices())
+            {
+                graph.AddNode(value.data);
+            }
 
             int i = 0;
             foreach (Graph.Vertex value1 in g1.GetVertices())
