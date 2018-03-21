@@ -122,19 +122,18 @@ namespace topological_sort
             int j;
             int i = V.GetIndex();            
             visited[i] = true;
-            sw.WriteLine(V.data);            
-
             timestamp++;
+            sw.WriteLine(V.data + "," + timestamp);            
             foreach (string vertexname in graph.GetNeighbor(V.data)) {
                 j = graph.GetVertexIndex(vertexname);
-                sw.WriteLine("( " + V.data + " " + vertexname);
+                sw.WriteLine("(," + V.data + "," + vertexname);
                 if (!visited[j])
                 {
                     DFSUtil(graph.GetVertex(j), ref timestamp, ref stopstamp, ref visited, ref sw);
                 }
             }
-            sw.WriteLine("> " + V.data);
-            timestamp++;            
+            timestamp++;
+            sw.WriteLine(">," + V.data + "," + timestamp);
             stopstamp[i] = timestamp;
         }
         public void DFS()
@@ -163,8 +162,8 @@ namespace topological_sort
             //sw.WriteLine(string.Join(",", resultIndex.ToArray()));
             for (i = 0; i < resultIndex.Count(); i++) {
                 res[i] = graph.GetVertex(resultIndex[resultIndex.Count()-1-i]).data;
+                sw.WriteLine("==," + res[i]);
             }
-            //sw.WriteLine(string.Join(",", res.ToArray()));
             sw.Close();
             result = res;
         }

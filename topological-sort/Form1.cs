@@ -14,7 +14,7 @@ namespace topological_sort
 {
     public partial class Form1 : Form
     {
-        private Graph g1 = new Graph(25);
+        private Graph g1 = new Graph(100);
 
         public Form1()
         {
@@ -53,7 +53,6 @@ namespace topological_sort
                     List<string> g1vertex;
                     while ((line = sr.ReadLine()) != null)
                     {
-                        listBox1.Items.Add(line);
                         g1vertex = (line.Split('.').ToList<string>())[0].Split(',').ToList<string>();
                         foreach (string value in g1vertex)
                         {
@@ -249,45 +248,50 @@ namespace topological_sort
             form.ResumeLayout();
             //show the form 
             form.ShowDialog();
-
-            Microsoft.Msagl.Drawing.Graph graph1 = new Microsoft.Msagl.Drawing.Graph("graph1");
+            
             //create the graph content 
             using (StreamReader sr = new StreamReader("DFS.dat"))
             {
                 string line;
                 List<string> step;
-                foreach(Graph.Vertex value1 in g1.GetVertices())
-                {
-                    graph1.AddNode(value1.data).Attr.FillColor = Microsoft.Msagl.Drawing.Color.White;
-                }
+                int count = 0;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    //line.Trim(' ');
-                    //line.Trim('.');
-                    //listBox1.Items.Add(line);
-                    step = line.Split(' ').ToList<string>();
+                    step = line.Split(',').ToList<string>();
                     if (step[0] == "(")
                     {
-                        graph1.AddEdge(step[1], step[2]).Attr.Color = Microsoft.Msagl.Drawing.Color.Black;
+                        Microsoft.Msagl.Drawing.Node c = graph.FindNode(step[1]);
+                        IEnumerable<Microsoft.Msagl.Drawing.Edge> edges = c.OutEdges;
+                        foreach (Microsoft.Msagl.Drawing.Edge edge in edges)
+                        {
+                            if (edge.TargetNode == graph.FindNode(step[2]))
+                            {
+                                edge.Attr.Color = Microsoft.Msagl.Drawing.Color.Red;
+                            }
+                        }
                     }
                     else if (step[0] == ">")
 
                     {
-                        graph1.FindNode(step[1]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Green;
+                        graph.FindNode(step[1]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.PaleVioletRed;
+                        graph.FindNode(step[1]).LabelText += "/" + step[2].ToString() + ")";
+                    }
+                    else if (step[0] == "==")
+                    {
+                        count++;
+                        graph.FindNode(step[1]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Aqua;
+                        graph.FindNode(step[1]).LabelText = count + ". " + graph.FindNode(step[1]).LabelText;
                     }
                     else
                     {
-                        if (graph1.FindNode(step[0]) != null)
-                        //{
-                        //   graph1.AddNode(step[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Coral;
-                        //}
-                        //else
+                        if (graph.FindNode(step[0]) != null)
                         {
-                            graph1.FindNode(step[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Coral;
+                            graph.FindNode(step[0]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.PaleGreen;
+                            graph.FindNode(step[0]).LabelText += " (" + step[1].ToString();
                         }
                     }
                     //bind the graph to the viewer 
-                    viewer.Graph = graph1;
+                    viewer.Graph = graph;
                     //associate the viewer with the form 
                     form.SuspendLayout();
                     viewer.Dock = System.Windows.Forms.DockStyle.Fill;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C1
 C2,C3,
 C2
@@ -13,3 +14,26 @@ C6
 C7
 
 C1,C2,C3,C4,C5,C6,C7,
+||||||| merged common ancestors
+C3
+C1,C4,
+C1
+C2,C4,
+C4
+C2,C5,
+C2
+C5,
+C5
+C3,C1,C4,C2,C5,
+=======
+Sejarah Ketampanan
+Manajemen Ketampanan,Ketampanan Dasar,
+Manajemen Ketampanan
+Ketampanan Tingkat Lanjut,Sistem Ketampanan,
+Ketampanan Dasar
+Manajemen Ketampanan,Ketampanan Tingkat Lanjut,
+Ketampanan Tingkat Lanjut
+Sistem Ketampanan,
+Sistem Ketampanan
+Sejarah Ketampanan,Ketampanan Dasar,Manajemen Ketampanan,Ketampanan Tingkat Lanjut,Sistem Ketampanan,
+>>>>>>> e5c6416442122140a2ba24f15612945d3dbf9e41

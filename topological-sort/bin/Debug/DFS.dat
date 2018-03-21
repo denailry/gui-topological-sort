@@ -1,65 +1,22 @@
-<<<<<<< HEAD
-C1
-> C1
- C3
-(  C3 C1
-(  C3 C4
-C4
-> C4
->  C3
-||||||| merged common ancestors
-C1
-( C1 C2
-=======
-C4
-( C4 C2
->>>>>>> 5399bf3ee8b18d1f2957a541c6444b741f302ea8
-C2
-<<<<<<< HEAD
-> C2
- C1
-(  C1 C2
-(  C1 C4
->  C1
- C4
-(  C4 C2
-(  C4 C5
-||||||| merged common ancestors
-( C2 C3
-C3
-( C3 C5
-=======
-( C2 C5
->>>>>>> d92c0de7b3860fdaeddfa1ccd5fa4cb207161c81
-C5
-> C5
-<<<<<<< HEAD
->  C4
-C3
-> C3
- C2
-(  C2 C5
->  C2
-||||||| merged common ancestors
-> C3
-( C2 C4
-C4
-( C4 C3
-( C4 C5
-> C4
-> C2
-( C1 C4
-> C1
-=======
-> C2
-( C4 C5
-> C4
-C1
-( C1 C4
-( C1 C2
-> C1
-C3
-( C3 C4
-( C3 C1
-> C3
->>>>>>> d92c0de7b3860fdaeddfa1ccd5fa4cb207161c81
+Manajemen Ketampanan,1
+(,Manajemen Ketampanan,Ketampanan Tingkat Lanjut
+Ketampanan Tingkat Lanjut,2
+(,Ketampanan Tingkat Lanjut,Sistem Ketampanan
+Sistem Ketampanan,3
+>,Sistem Ketampanan,4
+>,Ketampanan Tingkat Lanjut,5
+(,Manajemen Ketampanan,Sistem Ketampanan
+>,Manajemen Ketampanan,6
+Ketampanan Dasar,7
+(,Ketampanan Dasar,Manajemen Ketampanan
+(,Ketampanan Dasar,Ketampanan Tingkat Lanjut
+>,Ketampanan Dasar,8
+Sejarah Ketampanan,9
+(,Sejarah Ketampanan,Manajemen Ketampanan
+(,Sejarah Ketampanan,Ketampanan Dasar
+>,Sejarah Ketampanan,10
+==,Sejarah Ketampanan
+==,Ketampanan Dasar
+==,Manajemen Ketampanan
+==,Ketampanan Tingkat Lanjut
+==,Sistem Ketampanan
