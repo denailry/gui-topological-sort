@@ -249,6 +249,7 @@ namespace topological_sort
             {
                 string line;
                 List<string> step;
+                int count = 0;
                 while ((line = sr.ReadLine()) != null)
                 {
                     step = line.Split(',').ToList<string>();
@@ -272,7 +273,9 @@ namespace topological_sort
                     }
                     else if (step[0] == "==")
                     {
+                        count++;
                         graph.FindNode(step[1]).Attr.FillColor = Microsoft.Msagl.Drawing.Color.Aqua;
+                        graph.FindNode(step[1]).LabelText = count + ". " + graph.FindNode(step[1]).LabelText;
                     }
                     else
                     {
