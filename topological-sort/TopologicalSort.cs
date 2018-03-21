@@ -32,6 +32,7 @@ namespace topological_sort
             Graph.Vertex root = graph.GetVertex(graph.GetRootIndex());
             Queue<string> queue = new Queue<string>();
             List<string> neighbors = graph.GetNeighbor(root.data);
+            visited[graph.GetVertexIndex(root.data)] = true;
 
             System.IO.File.WriteAllText("BFS.dat", root.data + Environment.NewLine);
             string strNeighbors = "";
@@ -57,11 +58,18 @@ namespace topological_sort
                         strNeighbors = strNeighbors + vertex + ",";
                         visitCounter[graph.GetVertexIndex(vertex)]++;
                     }
-                    if (strNeighbors.Length != 0)
-                    {
-                        System.IO.File.AppendAllText("BFS.dat", strNeighbors + Environment.NewLine);
-                    }
+                    System.IO.File.AppendAllText("BFS.dat", strNeighbors + Environment.NewLine);
                     visited[graph.GetVertexIndex(visit)] = true;
+                }
+                if (queue.Count == 0)
+                {
+                    for (int i = 0; i < graph.GetGraphSize(); ++i) {
+                        if (!visited[i])
+                        {
+                            queue.Enqueue(graph.GetVertex(i).data);
+                            break;
+                        }
+                    }
                 }
             }
 

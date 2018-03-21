@@ -115,10 +115,15 @@ namespace topological_sort
             {
                 string vertex = g1.GetVertex(i).data;
                 List<string> neighbours = g1.GetNeighbor(vertex);
-
-                foreach (var neighbour in neighbours)
+                if (neighbours.Count == 0)
                 {
-                    graph.AddEdge(vertex, neighbour);
+                    graph.AddNode(vertex);
+                } else
+                {
+                    foreach (var neighbour in neighbours)
+                    {
+                        graph.AddEdge(vertex, neighbour);
+                    }
                 }
                 graph.FindNode(vertex).LabelText = vertex + " 0";
                 graph.FindNode(vertex).Attr.Shape = Microsoft.Msagl.Drawing.Shape.Diamond;
@@ -174,7 +179,7 @@ namespace topological_sort
                 turn++;
             }
 
-            int resultIndex = vertexIndex + 1;
+            int resultIndex = vertexIndex + vertexIndexLength;
             List<string> resultSequences = lines[resultIndex].Split(',').ToList<string>();
             int rank = 0;
             foreach (var vertex in resultSequences)
