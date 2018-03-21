@@ -14,7 +14,7 @@ namespace topological_sort
 {
     public partial class Form1 : Form
     {
-        private Graph g1 = new Graph(25);
+        private Graph g1 = new Graph(100);
 
         public Form1()
         {
